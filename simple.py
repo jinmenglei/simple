@@ -98,8 +98,8 @@ class Simple(object):
         rospy.Subscriber('/imu/data', Imu, self.imu_callback)
         rospy.Subscriber('/closest_wp_index', Int32, self.index_callback)
 
-    def index_callback(self, index:Int32):
-        self.index = index.data
+    def index_callback(self, closest_wp_index: Int32):
+        self.index = closest_wp_index.data
         pass
 
     def get_config(self):
